@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="./css/style.css">
+	<script type="text/javascript" src="./js/jquery-3.1.1.slim.min.js"></script> 
+
+</head>
+
+<body>
+
+  <div id="form-div">
+
+  결과화면이다옹 
+
+  </div>
+
+</body>
+
+<script>
+  $(document.ready(function () {
+    $("#btnInputKanji").click(moveInputKanji);
+    $("#btnStudy").click(moveStudy);
+    $("#btnEdit").click(moveEdit);
+    $("#btnTest").click(moveTest);
+    $("#btnTestResult").click(moveResult);
+  });
+
+  function moveInputKanji(){
+    location.href = "./inputKanji.html"
+  }
+
+  function moveStudy(){
+    location.href = "./study.html"
+  }
+
+  function moveEdit(){
+    location.href = "./edit.html"
+  }
+
+  function moveTest(){
+    location.href = "./test.html"
+  }
+
+  function moveResult(){
+    location.href = "./result.html"
+  }
+
+</script>
+
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="./css/style.css">
+	<script type="text/javascript" src="./js/jquery-3.1.1.slim.min.js"></script> 
+
+</head>
+
+<body>
+
+  <div id="form-div">
+
+      <div class="submit">
+        <input type="submit" value="INPUT KANJI" class="button-blue" id="btnInputKanji" />
+        <div class="ease"></div>
+      </div>
+      <div class="submit">
+        <input type="submit" value="STUDY" class="button-blue" id="btnStudy" />
+        <div class="ease"></div>
+      </div>
+      <div class="submit">
+        <input type="submit" value="EDIT" class="button-blue" id="btnEdit" />
+        <div class="ease"></div>
+      </div>            
+      <div class="submit">
+        <input type="submit" value="TEST" class="button-blue" id="btnTest" />
+        <div class="ease"></div>
+      </div>      
+      <div class="submit">
+        <input type="submit" value="RESULT" class="button-blue" id="btnTestResult" />
+        <div class="ease"></div>
+      </div>      
+  </div>
+
+</body>
+
+<script>
+  $(document).ready(function () {
+    $("#btnInputKanji").click(moveInputKanji);
+    $("#btnStudy").click(moveStudy);
+    $("#btnEdit").click(moveEdit);
+    $("#btnTest").click(moveTest);
+    $("#btnTestResult").click(moveResult);
+  });
+
+  function moveInputKanji(){
+    location.href = "input.html"
+  }
+
+  function moveStudy(){
+    location.href = "study.html"
+  }
+
+  function moveEdit(){
+    location.href = "edit.html"
+  }
+
+  function moveTest(){
+    location.href = "test.html"
+  }
+
+  function moveResult(){
+    location.href = "result.html"
+  }
+
+</script>
+
+
+</html>
