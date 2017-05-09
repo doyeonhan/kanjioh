@@ -23,6 +23,7 @@
     한글
     <input type="submit" value="<<<" class="button-rmt" id="backBtn"/>
     <input type="submit" value=">>>" class="button-rmt" id="fwdBtn"/>
+    <input type="submit" value="전부" class="button-rmt" id="allBtn"/>
     <input type="submit" value="정답" class="button-rmt" id="sltBtn"/>
     <br>
 
@@ -30,6 +31,7 @@
     영어
     <input type="submit" value="<<<" class="button-rmt" id="backBtnE"/>
     <input type="submit" value=">>>" class="button-rmt" id="fwdBtnE"/>
+    <input type="submit" value="전부" class="button-rmt" id="allBtnE"/>    
     <input type="submit" value="정답" class="button-rmt" id="sltBtnE"/>
     <br>
 
@@ -50,6 +52,8 @@
     $("#fwdBtnE").click(function(){eoh.moveQuestionE(1)});
     $("#sltBtn").click(function(){eoh.viewSolution()});
     $("#sltBtnE").click(function(){eoh.viewSolutionE()});    
+    $("#allBtn").click(function(){eoh.allQuestion()});
+    $("#allBtnE").click(function(){eoh.allQuestionE()});    
     $("#preMove").click(function(){eoh.pageMove(-1)});
     $("#fwdMove").click(function(){eoh.pageMove(1)});
   });

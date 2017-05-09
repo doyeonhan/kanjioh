@@ -119,6 +119,22 @@
 	    viewSolutionE: function(){
 			$("#tgt").html(questionCdn + ". " + mixedQuestionList[questionCdn][0] +"<br> 답 : " + mixedQuestionList[questionCdn][1]);	    	
 	    },	    
+		allQuestion: function(){
+			var tempHtml = "";
+			for(var i=0;questionList.length>i;i++){
+				tempHtml += i+1 + ". " + mixedQuestionList[i][0] + "<font style='color:white'>"+mixedQuestionList[i][1]+"</font><br>";
+			}
+
+			$("#tgt").html(tempHtml);
+		},
+		allQuestionE: function(){
+			var tempHtml = "";
+			for(var i=0;mixedQuestionList.length>i;i++){
+				tempHtml += i+1 + ". " + mixedQuestionList[i][1] + "<font style='color:white'>"+mixedQuestionList[i][0]+"</font><br>";
+				
+			}
+			$("#tgt").html(tempHtml);
+		},		
 	    // 문제 호출
 	    moveQuestion: function(idx){    	
 	    	var tl = questionList.length;
@@ -172,7 +188,7 @@
 					width ="200px";
 				}
 
-//				console.log(aaa[type])
+
 				result += "&nbsp;<span style='position: relative; display: inline-block; width: "+width+"; line-height: 15px; top: 27px; white-space:nowrap; text-align: center;'>" + eng + "<hr/><a style='position: relative; font-size: 12px; top: -10px;'>" + aaa[type] + "</a></span>&nbsp;";
 
 				return result;
