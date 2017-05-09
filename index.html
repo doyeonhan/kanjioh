@@ -33,6 +33,16 @@
         <input type="submit" value="RESULT" class="button-blue" id="btnTestResult" />
         <div class="ease"></div>
       </div>      
+
+      <div class="submit">
+        <input type="submit" value="STUDY(E)" class="button-blue" id="btnStudyE" />
+        <div class="ease"></div>
+      </div>
+      <div class="submit">
+        <input type="submit" value="TEST(E)" class="button-blue" id="btnTestE" />
+        <div class="ease"></div>
+      </div>      
+
   </div>
 
 </body>
@@ -44,6 +54,9 @@
     $("#btnEdit").click(moveEdit);
     $("#btnTest").click(moveTest);
     $("#btnTestResult").click(moveResult);
+    $("#btnStudyE").click(moveStudyE);
+    $("#btnTestE").click(moveTestE);
+
   });
 
   function moveInputKanji(){
@@ -64,6 +77,16 @@
 
   function moveResult(){
     location.href = "result.html"
+  }
+
+
+
+  function moveTestE(){
+    location.href = "testE.html"
+  }
+
+  function moveStudyE(){
+    location.href = "studyE.html"
   }
 
 </script>
