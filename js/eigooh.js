@@ -28,7 +28,7 @@
 		engJson = getJsonData();
 
 		for(var key in engJson){
-		   questionList.push(engJson[key][1]);
+		   questionList.push([key, engJson[key]]);
 	  	}
 	  
 		switch(proc){
@@ -107,24 +107,42 @@
 	window.eoh = {
 	    setQuestionList: function () {
 	  		for(var key in engJson){
-	    		questionList.push(engJson[key][1]);
+	    		questionList.push([key, engJson[key]]);
 	  		}    	
 	    },
 	    setQuestionCdn: function(cdn){
 	    	questionCdn = cdn;
 	    },
+	    viewSolution: function(){
+			$("#tgt").html(questionCdn + ". " + mixedQuestionList[questionCdn][1] +"<br> 답 : " + mixedQuestionList[questionCdn][0]);	    	
+	    },	    
+	    viewSolutionE: function(){
+			$("#tgt").html(questionCdn + ". " + mixedQuestionList[questionCdn][0] +"<br> 답 : " + mixedQuestionList[questionCdn][1]);	    	
+	    },	    
 	    // 문제 호출
 	    moveQuestion: function(idx){    	
 	    	var tl = questionList.length;
 	    	if(questionCdn<=0 && idx == -1){
-	      		koh.setQuestionCdn(0);
+	      		eoh.setQuestionCdn(0);
 	    	}else if(questionCdn==tl && idx == 1){
-	      		koh.setQuestionCdn(questionlist.length-1);
+	      		eoh.setQuestionCdn(questionlist.length-1);
 	    	}else{
-	      		koh.setQuestionCdn(questionCdn + idx);
+	      		eoh.setQuestionCdn(questionCdn + idx);
 	    	}
 
-		    $("#tgt").html(questionCdn + ". " + mixedQuestionList[questionCdn]);
+		    $("#tgt").html(questionCdn + ". " + mixedQuestionList[questionCdn][1]);
+	    },
+	    moveQuestionE: function(idx){    	
+	    	var tl = questionList.length;
+	    	if(questionCdn<=0 && idx == -1){
+	      		eoh.setQuestionCdn(0);
+	    	}else if(questionCdn==tl && idx == 1){
+	      		eoh.setQuestionCdn(questionlist.length-1);
+	    	}else{
+	      		eoh.setQuestionCdn(questionCdn + idx);
+	    	}
+
+		    $("#tgt").html(questionCdn + ". " + mixedQuestionList[questionCdn][0]);
 	    },
 	    //페이지 이동 
 	    pageMove: function(idx){
@@ -133,7 +151,7 @@
 			var key = "phase"+current;
 			if(db[key] != undefined){
 				$("#name").val(current);
-				htmlInit("test");
+				htmlInit("testE");
 			}
 	    },
 	    changeForm: function(type){

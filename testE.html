@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/jquery-3.1.1.slim.min.js"></script> 
-  <script type="text/javascript" src="./js/tempkanjidb.js"></script>   
-  <script type="text/javascript" src="./js/kanjioh.js"></script>   
+  <script type="text/javascript" src="./js/tempengdb.js"></script>   
+  <script type="text/javascript" src="./js/eigooh.js"></script>   
 </head>
 
 <body>
@@ -20,10 +20,18 @@
     <input type="submit" class="button-blue" value="phase move +1" id="fwdMove" /><br>
 
     <br>
+    한글
     <input type="submit" value="<<<" class="button-rmt" id="backBtn"/>
     <input type="submit" value=">>>" class="button-rmt" id="fwdBtn"/>
+    <input type="submit" value="정답" class="button-rmt" id="sltBtn"/>
     <br>
 
+    <br>
+    영어
+    <input type="submit" value="<<<" class="button-rmt" id="backBtnE"/>
+    <input type="submit" value=">>>" class="button-rmt" id="fwdBtnE"/>
+    <input type="submit" value="정답" class="button-rmt" id="sltBtnE"/>
+    <br>
 
     <span id="tgt" style="font-size:40px"></span>
   </div>
@@ -34,12 +42,16 @@
 
   $(document).ready(function(){
 
-    koh.init('test');    
+    eoh.init('testE');    
 
-    $("#backBtn").click(function(){koh.moveQuestion(-1)});
-    $("#fwdBtn").click(function(){koh.moveQuestion(1)});
-    $("#preMove").click(function(){koh.pageMove(-1)});
-    $("#fwdMove").click(function(){koh.pageMove(1)});
+    $("#backBtn").click(function(){eoh.moveQuestion(-1)});
+    $("#fwdBtn").click(function(){eoh.moveQuestion(1)});
+    $("#backBtnE").click(function(){eoh.moveQuestionE(-1)});
+    $("#fwdBtnE").click(function(){eoh.moveQuestionE(1)});
+    $("#sltBtn").click(function(){eoh.viewSolution()});
+    $("#sltBtnE").click(function(){eoh.viewSolutionE()});    
+    $("#preMove").click(function(){eoh.pageMove(-1)});
+    $("#fwdMove").click(function(){eoh.pageMove(1)});
   });
   </script>
 
